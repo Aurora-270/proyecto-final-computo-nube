@@ -1,0 +1,55 @@
+body, html{
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+    font-size: 1rem; 
+    font-family: 'Roboto', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    background: rgb(159, 228, 255);  
+}
+.iicon {
+    font-size: 26px;
+    padding: 0 8px;
+    color:#2517e7;
+}
+.iaudio {
+    font-size: 70px;
+    padding: 0 8px;
+    color:#e76a17;
+}
+/*
+background-image: url(/static/images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 720px;
+    text-align: center;
+*/
+li{
+    list-style: none;
+    
+}
+footer {
+    background: #1b2a4e;
+    min-height: 100px;;
+}
+footer p{
+    color:#f3f3f3;
+    text-align:center;
+}
+#iconos  i {
+    font-size: 26px;
+    padding: 0 8px;
+    color:#f3f3f3;
+}
+
+
+.card-border{
+    border: solid 10px white;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+
+.card-border:hover{
+    transform: scale(1.05);
+}
