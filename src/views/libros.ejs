@@ -1,0 +1,49 @@
+<%- layout('layouts/main') %>
+<br>
+<div class="row mb-5">
+  <div class="col-md-8 mx-auto text-center ">
+    <h1> <font face = "Cursive"> Inventario de libros en existencia</font> </h1>
+    <p>Puede editar o eliminar un libro del inventario</p>
+  </div>
+</div>
+
+<br>
+
+<table class="table table-hover table-striped ">
+    <thead style="background: linear-gradient(0deg, rgb(30, 172, 255)40%,rgb(7, 106, 255))">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col"><center>Accion</center></th>
+
+      </tr>
+    </thead>
+    <tbody  class="table-light">
+        <% for(var i=0; i < book.length; i++) {%>
+            <tr>
+                <td><%= i+1%></td>
+                <td><%= book[i].Titulo %></td>
+                <td><%= book[i].Autor %></td>
+                <td><%= book[i].Genero %></td>
+                <td><%= book[i].Cantidad %></td>
+                <td><center>
+                    <a href="/delete/<%= book[i]._id %>" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="/edit_libro/<%= book[i]._id%>" class="btn btn-info btn-sm">Editar</a></center>
+                </td>
+            </tr>                   
+        <%}%>
+        
+    </tbody>
+  </table>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

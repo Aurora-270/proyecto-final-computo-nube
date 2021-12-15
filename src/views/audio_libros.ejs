@@ -1,0 +1,96 @@
+<%- layout('layouts/main') %>
+<br>
+<div class="row mb-10">
+  <div class="col-md-8 mx-auto text-center ">
+    <h1> <font face = "Cursive"> Inventario de Audio libros</font> </h1>
+    <p>Tiene acceso a descargar, agregar, modificar o eliminar algun audio libro</p>
+  </div>
+</div>
+<!--Formulario-->
+<div class="row mb-5">
+    <div class="col-md-4 offset-md-4">
+      <div class="card mt-4 text-center">
+        <div class="card-header" style="background: linear-gradient(0deg, rgb(30, 172, 255)40%,rgb(7, 106, 255))">
+          <h4>Agregar nuevo audio libro</h4>
+        </div>
+        <div class="card-body" style="background-color: #ffffff;">
+            <form action="/add_audio" method="POST">
+                <div class="form-group mb-3">
+                    <input type="text" name="Titulo" placeholder="Inserta un titulo" class="form-control">
+                </div> 
+                <div class="form-group mb-3">                            
+                    <input type="text" name="Autor" placeholder="Nombre del autor" class="form-control">
+                </div>  
+                <div class="form-group mb-3">                            
+                    <input type="text" name="Genero" placeholder="Genero del libro" class="form-control">
+                </div>  
+                <div class="form-group mb-3">                            
+                    <input type="text" name="Duracion" placeholder="Duracion en 00h 00m 00s" class="form-control">
+                </div>  
+                <div class="form-group mb-3 d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </div>                                           
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--div class="card w-100 card-border mb-5">
+    <i class="iaudio fas fa-headphones-alt"></i>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Titulo</li>
+        <li class="list-group-item">Autor</li>
+        <li class="list-group-item">Genero</li>
+        <li class="list-group-item">Duracion</li>
+      </ul>
+    <a href="#" class="btn btn-sm btn-outline-success">Descargar</a>
+    <a href="#" class="btn btn-sm btn-outline-info">Editar</a>
+    <a href="#" class="btn btn-sm btn-outline-danger">Eliminar</a>
+    </div>
+</div-->
+
+<div class="row">
+
+    <% for(var i=0; i < audio_book.length; i++) {%>
+        <% if( i%3!=0 ) {%> 
+            <div class="col-sm">
+                <div class="card w-100 card-border mb-5">
+                    <center><i class="iaudio fas fa-headphones-alt"></i></center>
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= audio_book[i].Titulo %></li>
+                        <li class="list-group-item"><%= audio_book[i].Autor %></li>
+                        <li class="list-group-item"><%= audio_book[i].Genero %></li>
+                        <li class="list-group-item"><%= audio_book[i].Duracion %></li>
+                      </ul>
+                    <a href="#" class="btn btn-sm btn-outline-success">Descargar</a>
+                    <a href="/edit_audio/<%= audio_book[i]._id%>" class="btn btn-sm btn-outline-info">Editar</a>
+                    <a href="/delete_audio/<%= audio_book[i]._id %>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>      
+        <%} else {%>  
+        </div>    
+        <div class="row">
+            <div class="col-sm">
+                <div class="card w-100 card-border mb-5">
+                    <center><i class="iaudio fas fa-headphones-alt"></i></center>
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= audio_book[i].Titulo %></li>
+                        <li class="list-group-item"><%= audio_book[i].Autor %></li>
+                        <li class="list-group-item"><%= audio_book[i].Genero %></li>
+                        <li class="list-group-item"><%= audio_book[i].Duracion %></li>
+                      </ul>
+                    <a href="#" class="btn btn-sm btn-outline-success">Descargar</a>
+                    <a href="/edit_audio/<%= audio_book[i]._id%>" class="btn btn-sm btn-outline-info">Editar</a>
+                    <a href="/delete_audio/<%= audio_book[i]._id %>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>      
+        <%}%>
+    <%}%>
+</div>
+
