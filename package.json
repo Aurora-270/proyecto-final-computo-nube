@@ -1,0 +1,35 @@
+{
+  "name": "proyecto_final_computo_nube",
+  "version": "1.0.0",
+  "description": "Proyecto Final de Computo en la nube con Servidor NodeJs con acceso a datos con MongoDB en el cual se realiza un Login con seguridad integrada al encriptar el password y transacciones",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aurora-270/proyecto-final-computo-nube.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aurora-270/proyecto-final-computo-nube/issues"
+  },
+  "homepage": "https://github.com/Aurora-270/proyecto-final-computo-nube#readme"
+}
